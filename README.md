@@ -20,3 +20,25 @@ This project builds predictive models to determine the likelihood of a credit ca
 ### Install the required package (if not installed yet):
 ```r
 install.packages("earth")
+
+## Run the R script:
+source("Model_Training.r")
+## Load the Trained Models (if MyModels.RData exists):
+load("MyModels.RData")  
+ls()  # Should show model1A and model1B
+summary(model1A)
+summary(model1B)
+
+## Expected Output
+
+The script generates MyModels.RData, which contains:
+model1A (excluding expenditure as a variable).
+model1B (including expenditure).
+The models can be analyzed using:
+summary(model1A)
+summary(model1B)
+
+## Notes
+
+Ensure credit_card_data.csv is in the same directory as Model_Training.r.
+If MyModels.RData is missing, rerun the script to retrain and save the models.
