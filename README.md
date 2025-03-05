@@ -1,63 +1,35 @@
 # R-Programming
 
-Overview
+# Overview
 
-This project builds predictive models to determine the likelihood of a credit card application being approved based on financial and demographic factors. The models leverage Linear Regression and Multivariate Adaptive Regression Splines (MARS) to analyze key applicant features.
+# Credit Card Approval Prediction
 
-Project Files
+## Overview  
+This project builds and evaluates predictive models to determine credit card approval likelihood based on applicant features. The dataset (`credit_card_data.csv`) includes various demographic and financial attributes.
 
-Model_Training.r
+## Files  
+- **`credit_card_data.csv`** - Contains the dataset used for training and evaluation.  
+- **`Model_Training.r`** - R script that:
+  - Loads and preprocesses the dataset.
+  - Implements K-Fold cross-validation.
+  - Trains multiple models using linear regression and MARS (Multivariate Adaptive Regression Splines).
+  - Selects the best-performing models based on RMSE (Root Mean Squared Error).
 
-Loads and processes the dataset.
+## Model Details  
 
-Trains multiple predictive models (Linear Regression & MARS).
+- **Model 1A**: Trained without the `expenditure` variable.  
+- **Model 1B**: Trained with the `expenditure` variable.  
+- Both models use different feature combinations and tuning thresholds for optimization.
 
-Performs cross-validation for accuracy evaluation.
+## Output  
 
-Saves the best-performing models to MyModels.RData.
+- The script performs **cross-validation** and selects the **best models** based on RMSE.  
+- If errors occur (e.g., incorrect model submission), the script provides warnings.  
+- A successful run generates `MyModels.Rdata`, which contains the trained models.
 
-credit_card_data.csv
+## Dependencies  
 
-The dataset contains anonymized applicant details, including:
+Ensure you have the following R package installed before running the script:  
 
-Financial Factors: Income, credit history, expenditures.
-
-Demographics: Age, homeownership, employment status.
-
-Target Variable: card (1 = Approved, 0 = Rejected).
-
-How to Run the Model
-
-Install the required package (if not installed yet):
-
-install.packages("earth")
-
-Run the R script:
-
-source("Model_Training.r")
-
-Load the Trained Models (if MyModels.RData exists):
-
-load("MyModels.RData")  
-ls()  # Should show model1A and model1B
-summary(model1A)
-summary(model1B)
-
-Expected Output
-
-The script generates MyModels.RData, which contains:
-
-model1A (excluding expenditure as a variable).
-
-model1B (including expenditure).
-
-The models can be analyzed using:
-
-summary(model1A)
-summary(model1B)
-
-Notes
-
-Ensure credit_card_data.csv is in the same directory as Model_Training.r.
-
-If MyModels.RData is missing, rerun the script to retrain and save the models.
+```r
+install.packages('earth')
