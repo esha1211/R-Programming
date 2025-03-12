@@ -1,9 +1,7 @@
-# R-Programming
-
-## Credit Card Approval Prediction
+# Credit Card Approval Prediction
 
 ## Overview  
-This project builds and evaluates predictive models to determine credit card approval likelihood based on applicant features. The dataset (`credit_card_data.csv`) includes various demographic and financial attributes.
+This project builds and evaluates predictive models on R to determine credit card approval likelihood based on applicant features. The dataset (`credit_card_data.csv`) includes various demographic and financial attributes.
 
 ## Files  
 - **`credit_card_data.csv`** - Contains the dataset used for training and evaluation.  
